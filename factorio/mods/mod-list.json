@@ -1,0 +1,71 @@
+
+{
+  "mods": 
+  [
+    
+    {
+      "name": "base",
+      "enabled": true
+    },
+    
+    {
+      "name": "AutoDeconstruct",
+      "enabled": true
+    },
+    
+    {
+      "name": "calculator-ui",
+      "enabled": true
+    },
+    
+    {
+      "name": "DiscoScience",
+      "enabled": true
+    },
+    
+    {
+      "name": "EvoGUI",
+      "enabled": true
+    },
+    
+    {
+      "name": "factoryplanner",
+      "enabled": false
+    },
+    
+    {
+      "name": "flib",
+      "enabled": false
+    },
+    
+    {
+      "name": "MaxRateCalculator",
+      "enabled": true
+    },
+    
+    {
+      "name": "RateCalculator",
+      "enabled": true
+    },
+    
+    {
+      "name": "RecExplo",
+      "enabled": false
+    },
+    
+    {
+      "name": "Todo-List",
+      "enabled": true
+    },
+    
+    {
+      "name": "tree_collision",
+      "enabled": true
+    },
+    
+    {
+      "name": "YARM",
+      "enabled": true
+    }
+  ]
+}
