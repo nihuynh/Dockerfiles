@@ -8,3 +8,4 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     wget --no-check-certificate -O ./factorio.tar.gz https://www.factorio.com/get-download/`echo $FACTORIO_VERSION`/headless/linux64 && \
     tar xvf ./factorio.tar.gz && \
     rm -rf ./factorio.tar.gz
+COPY server-settings.json /opt/factorio/data
