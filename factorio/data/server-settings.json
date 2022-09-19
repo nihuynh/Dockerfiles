@@ -1,6 +1,6 @@
 {
   "name": "BerryCake Grid",
-  "description": "Description of the game that will appear in the listing",
+  "description": "Grid factory. Rail world settings [QoL Mods]",
   "tags": [
     "game",
     "tags"
@@ -12,14 +12,14 @@
     "lan: Game will be broadcast on LAN"
   ],
   "visibility": {
-    "public": false,
+    "public": true,
     "lan": true
   },
   "_comment_credentials": "Your factorio.com login credentials. Required for games with visibility public",
-  "username": "",
+  "username": "Cakeofruit",
   "password": "",
   "_comment_token": "Authentication token. May be used instead of 'password' above.",
-  "token": "",
+  "token": "2266aef37ea2ac288f349637516ef1",
   "game_password": "caca",
   "_comment_require_user_verification": "When set to true, the server will only allow clients that have a valid Factorio.com account",
   "require_user_verification": true,

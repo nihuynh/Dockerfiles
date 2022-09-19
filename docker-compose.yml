@@ -1,0 +1,16 @@
+version: '3'
+services:
+  server:
+    container_name: factorio_headless
+    build:
+      context: .
+    restart: always
+    tty: true
+    ports:
+      - "34197:34197/udp"
+    working_dir: /opt/factorio
+    volumes:
+      - ./factorio/saves:/opt/factorio/saves
+      - ./factorio/mods:/opt/factorio/mods
+      - ./factorio/data:/opt/factorio/data
+    command: ./bin/x64/factorio --port 34197 --start-server-load-latest --server-settings ./data/server-settings.json
