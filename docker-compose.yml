@@ -1,15 +1,33 @@
-version: '3'
+version: "3.9"
 services:
   factorio_server:
+    image: nihuynh/factorio_server:latest
     container_name: factorio_headless
-    build:
-      context: ./factorio
-    restart: always
+    restart: unless-stopped
     tty: true
     ports:
       - "34197:34197/udp"
+    networks:
+      - cf_net
     volumes:
       - ./factorio/saves:/opt/factorio/saves
       - ./factorio/mods:/opt/factorio/mods
     working_dir: /opt/factorio
     command: ./bin/x64/factorio --port 34197 --start-server-load-latest --server-settings ./data/server-settings.json
+
+  cf_tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cf_tunnel
+    restart: unless-stopped
+    networks:
+      - cf_net
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    # volumes:
+    #   - /opt/appdata/cloudflared/data:/home/nonroot/.cloudflared/
+    environment:
+      TUNNEL_TOKEN: {{CLOUDFLARE_TOKEN}}
+
+networks:
+  cf_net:
+    driver: bridge
+    external: true

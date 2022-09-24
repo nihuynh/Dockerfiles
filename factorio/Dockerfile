@@ -1,7 +1,10 @@
+# docker build . -t factorio_server --build-arg version_factorio=1.1.69
+# docker run -ti -p 34197:34197/udp -v $(pwd)/saves:/opt/factorio/saves -v $(pwd)/mods:/opt/factorio/mods --restart=unless-stopped -w /opt/factorio factorio_server ./bin/x64/factorio --port 34197 --start-server-load-latest --server-settings ./data/server-settings.json
 FROM debian:latest
 LABEL maintainer="nihuynh@student.42.fr"
 EXPOSE 34197/udp
-ENV FACTORIO_VERSION 1.1.69
+ARG version_factorio
+ENV FACTORIO_VERSION $version_factorio
 WORKDIR /opt
 RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get install -y wget tar gzip xz-utils && \
